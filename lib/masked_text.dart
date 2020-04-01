@@ -12,6 +12,8 @@ class MaskedTextField extends StatefulWidget {
   final TextInputType keyboardType;
   final InputDecoration inputDecoration;
   final FocusNode focusNode;
+  final bool autofocus;
+  final bool hideCounter;
 
   final ValueChanged<String> onChange;
 
@@ -22,6 +24,9 @@ class MaskedTextField extends StatefulWidget {
     this.keyboardType: TextInputType.text,
     this.inputDecoration: const InputDecoration(),
     this.focusNode,
+    this.autofocus = false,
+    this.hideCounter: false,
+                         
     this.onChange});
 
   @override
@@ -39,6 +44,8 @@ class _MaskedTextFieldState extends State<MaskedTextField> {
       keyboardType: widget.keyboardType,
       decoration: widget.inputDecoration,
       focusNode: widget.focusNode,
+      autofocus: widget.autofocus,
+      buildCounter: widget.hideCounter ? _hideCounter : null,
       onChanged: (String text) {
         // its deleting text
         if (text.length < lastTextSize) {
