@@ -14,6 +14,8 @@ It's very simple, it's a Widget as all the other ones.
         keyboardType: TextInputType.number,
         inputDecoration: new InputDecoration(
         hintText: "Write you Document here", labelText: "CPF"),
+        hideCounter: false,
+        autofocus: false
     );
 
 'x' is the normal char that your text will have.
