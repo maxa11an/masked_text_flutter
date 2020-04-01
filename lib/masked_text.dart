@@ -101,4 +101,6 @@ class _MaskedTextFieldState extends State<MaskedTextField> {
 
     return result;
   }
+  Widget _hideCounter(BuildContext context,
+      { int currentLength, int maxLength, bool isFocused }) => null;
 }
